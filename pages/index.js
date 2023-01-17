@@ -6,16 +6,19 @@ const Home = () => (
     <h1>{attributes.title}</h1>
     <div dangerouslySetInnerHTML={{ __html: html }} />
     <div>
-      <form name="contact" netlify>
+      <form name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
         <p>
-          <label>
-            Name <input type="text" name="name" />
-          </label>
+          <label htmlFor="name">Name</label>
+          <input type="text" id="name" name="name" />
         </p>
         <p>
-          <label>
-            Email <input type="email" name="email" />
-          </label>
+          <label htmlFor="email">Email</label>
+          <input type="text" id="email" name="email" />
+        </p>
+        <p>
+          <label htmlFor="message">Message</label>
+          <textarea id="message" name="message"></textarea>
         </p>
         <p>
           <button type="submit">Send</button>
